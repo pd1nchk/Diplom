@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учёт посещаемости</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script>
+        window.__diplomBootError = null;
+        window.addEventListener('error', function (e) {
+            window.__diplomBootError = (e.error && e.error.stack) ? e.error.stack : (e.message || 'Unknown error');
+            var box = document.getElementById('boot-error');
+            if (box) {
+                box.textContent = window.__diplomBootError;
+                box.style.display = 'block';
+            }
+        });
+        window.addEventListener('unhandledrejection', function (e) {
+            var msg = (e.reason && e.reason.stack) ? e.reason.stack : String(e.reason);
+            window.__diplomBootError = msg;
+            var box = document.getElementById('boot-error');
+            if (box) {
+                box.textContent = msg;
+                box.style.display = 'block';
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="composeApp"></div>
+<pre id="boot-error" style="display:none; color:#b00020; padding:16px; white-space:pre-wrap; font:12px/1.4 monospace;"></pre>
+<script type="application/javascript" src="composeApp.js"></script>
+</body>
+</html>
